@@ -35,8 +35,8 @@ public class Cards extends AppCompatActivity{
         this.cards = new ArrayList<String>();
 
         this.cards.add( "A" + getEmijoByUnicode( 0x2660 ) );
-        this.cards.add("A" + getEmijoByUnicode(0x2665));
-        this.cards.add("A" + getEmijoByUnicode(0x2663));
+        this.cards.add( "A" + getEmijoByUnicode( 0x2665 ) );
+        this.cards.add( "A" + getEmijoByUnicode( 0x2663 ) );
         this.cards.add( "A" + getEmijoByUnicode( 0x2666 ) );
         this.cards.add( "K" + getEmijoByUnicode( 0x2660 ) );
         this.cards.add( "K" + getEmijoByUnicode( 0x2665 ) );
@@ -49,6 +49,14 @@ public class Cards extends AppCompatActivity{
 
         final String firstCard = deal();
         final String secondCard = deal();
+
+        final String thirdCard = deal();
+        final String fourthCard = deal();
+        final String fifthCard = deal();
+
+        final String sixthCard = deal();
+        final String seventhCard = deal();
+
         String playerCards =  firstCard + " " + secondCard;
         cards.setText( playerCards );
 
@@ -58,6 +66,13 @@ public class Cards extends AppCompatActivity{
                 Intent intent = new Intent(Cards.this, Player.class);
                 intent.putExtra("first_card", firstCard);
                 intent.putExtra("second_card", secondCard);
+
+                intent.putExtra("third_card", thirdCard);
+                intent.putExtra("fourth_card", fourthCard);
+                intent.putExtra("fifth_card", fifthCard);
+
+                intent.putExtra("sixth_card", sixthCard);
+                intent.putExtra("seventh_card", seventhCard);
                 startActivity(intent);
             }
         });
