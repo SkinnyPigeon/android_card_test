@@ -29,8 +29,5 @@ public class Logic extends AppCompatActivity{
         } else {
             mMatched.setText( "No Match" );
         }
-
-//        mMatched.setText( firstCard + " " + secondCard );
-
     }
 }
