@@ -13,6 +13,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/match_button"/>
+        android:id="@+id/match_button"
+        android:text="Check Cards"/>
 
 </LinearLayout>

@@ -1,7 +1,9 @@
 package com.example.user.cardstest;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -42,7 +44,21 @@ public class TestCards extends AppCompatActivity{
         this.dealtCard = dealtCard;
 
         shuffle();
-        cards.setText( deal() + " " + deal() );
+
+        final String playerCardOne = deal();
+        final String playerCardTwo = deal();
+        String playerCards =  playerCardOne + " " + playerCardTwo;
+        cards.setText( playerCards );
+
+        mMatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( TestCards.this, Logic.class );
+                intent.putExtra( "first_card", playerCardOne );
+                intent.putExtra( "second_card", playerCardTwo );
+                startActivity( intent );
+            }
+        });
 
     }
 
