@@ -16,14 +16,19 @@
             </intent-filter>
         </activity>
 
-        <activity   android:name=".TestCards"
+        <activity   android:name=".Cards"
                     android:label="@string/dealt_cards"
                     android:parentActivityName=".CardsTest">
         </activity>
 
+        <activity   android:name=".Player"
+            android:label="@string/player_cards"
+            android:parentActivityName=".Cards">
+        </activity>
+
         <activity   android:name=".Logic"
-                    android:label="@string/match_cards"
-                    android:parentActivityName=".TestCards">
+            android:label="@string/match_cards"
+            android:parentActivityName=".Player">
         </activity>
 
     </application>

@@ -13,12 +13,13 @@ import java.util.Collections;
 /**
  * Created by user on 16/08/2016.
  */
-public class TestCards extends AppCompatActivity{
+public class Cards extends AppCompatActivity{
 
     private String dealtCard;
     private ArrayList<String>cards;
     private ArrayList<String>shuffledCards;
     Button mMatch;
+    Button mAgain;
 
 
 
@@ -28,6 +29,7 @@ public class TestCards extends AppCompatActivity{
         setContentView(R.layout.activity_cards);
         TextView cards = (TextView)findViewById( R.id.cardview );
         mMatch = ( Button )findViewById( R.id.match_button );
+        mAgain = ( Button )findViewById( R.id.try_again );
 
 
         this.cards = new ArrayList<String>();
@@ -45,18 +47,26 @@ public class TestCards extends AppCompatActivity{
 
         shuffle();
 
-        final String playerCardOne = deal();
-        final String playerCardTwo = deal();
-        String playerCards =  playerCardOne + " " + playerCardTwo;
+        final String firstCard = deal();
+        final String secondCard = deal();
+        String playerCards =  firstCard + " " + secondCard;
         cards.setText( playerCards );
 
         mMatch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( TestCards.this, Logic.class );
-                intent.putExtra( "first_card", playerCardOne );
-                intent.putExtra( "second_card", playerCardTwo );
-                startActivity( intent );
+                Intent intent = new Intent(Cards.this, Player.class);
+                intent.putExtra("first_card", firstCard);
+                intent.putExtra("second_card", secondCard);
+                startActivity(intent);
+            }
+        });
+
+        mAgain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Cards.this, Cards.class);
+                startActivity(intent);
             }
         });
 
@@ -83,8 +93,5 @@ public class TestCards extends AppCompatActivity{
     public String getEmijoByUnicode(int unicode){
         return new String(Character.toChars(unicode));
     }
-
-
-
 
 }

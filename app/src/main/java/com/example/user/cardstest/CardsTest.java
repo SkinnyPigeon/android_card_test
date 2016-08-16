@@ -27,7 +27,7 @@ public class CardsTest extends AppCompatActivity{
             public void onClick(View view) {
                 Log.d( "CardTest: ", "Deal button clicked");
 
-                Intent intent = new Intent( CardsTest.this, TestCards.class );
+                Intent intent = new Intent( CardsTest.this, Cards.class );
                 startActivity( intent );
             }
 

@@ -10,6 +10,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/deal_button"
         android:textSize="60dp"
-        android:text="Deal"/>
+        android:text="Play"/>
 
 </LinearLayout>
