@@ -17,8 +17,13 @@
         </activity>
 
         <activity   android:name=".TestCards"
-            android:label="@string/dealt_cards"
-            android:parentActivityName=".CardsTest">
+                    android:label="@string/dealt_cards"
+                    android:parentActivityName=".CardsTest">
+        </activity>
+
+        <activity   android:name=".TestCards"
+                    android:label="@string/match_cards"
+                    android:parentActivityName=".TestCards">
         </activity>
 
     </application>

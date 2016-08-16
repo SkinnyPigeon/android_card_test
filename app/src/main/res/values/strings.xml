@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Cards Test</string>
     <string name="dealt_cards">Have Some Cards</string>
+    <string name="match_cards">Matched Cards</string>
 </resources>
